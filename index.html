@@ -1,102 +1,816 @@
 <!DOCTYPE html>
-<html lang="ru">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/app.css">
-    <title>Моё описание</title>
-  </head>
-  <body>
-    <main>
-      <h1>Максим Кротких<h2>
-      <h2>Максим Кротких</h2>
-     <section> 
-      <h2>Образование</h2>
-      <ul>
-      <li>Уральский государственный горный университет. Направление: электропривод и автоматизация промышленных предприятий</li>
-       <li>Уральский государственный горный университет. Направление: электропривод и автоматизация промышленных предприятий</li>
-      </ul>
-      </section >
-     <section> 
-      <h2>Навыки</h2>
-      <ul>
-      <li>HTML</li>
-      <li>CSS</li>
-      <li>JavaScript</li>
-      <li>Магия</li>
-      </ul>
-      </section >
-      <section >
-      <h2>Дополнительная информация</h2>
-       уйti в it.
-      </section >
-      <!-- BEGIN (write your solution here) -->
-      
-      <!-- END -->
-    </main>
-  </body>
-</html>
-<main>
-  <h1>nnn</h1>
-  <ul>
-    <li></li>
-    <li></li>
-    <li></li>
-    <p></p>
-    <p></p>
-    <p></p>
-  </ul>
-</main>
-<main>
-  <h1>nnn</h1>
-  <ul>
-    <li></li>
-    <li></li>
-    <li></li>
-    <p>vyt gggg</p>
-    <p>vyt gggg</p>
-    <p>vyt gggg</p>
-    <p>vyt gggg</p>
-    <p>vyt gggg</p>
-    <p>vyt gggg</p>
-  </ul>
+<html>
+<head>
+<title>README.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
 
-<list>
-  <li>
-    <Hexlet></Hexlet>
-  </li>
-  <li>
-    <Hexlet></Hexlet>
-  </li>
-  <li>
-    <Hexlet></Hexlet>
-  </li>
-</list>
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/*
+
+github.com style (c) Vasily Polovnyov <vast@whiteants.net>
+
+*/
+
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  color: #333;
+  background: #f8f8f8;
+}
+
+.hljs-comment,
+.hljs-quote {
+  color: #998;
+  font-style: italic;
+}
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-subst {
+  color: #333;
+  font-weight: bold;
+}
+
+.hljs-number,
+.hljs-literal,
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag .hljs-attr {
+  color: #008080;
+}
+
+.hljs-string,
+.hljs-doctag {
+  color: #d14;
+}
+
+.hljs-title,
+.hljs-section,
+.hljs-selector-id {
+  color: #900;
+  font-weight: bold;
+}
+
+.hljs-subst {
+  font-weight: normal;
+}
+
+.hljs-type,
+.hljs-class .hljs-title {
+  color: #458;
+  font-weight: bold;
+}
+
+.hljs-tag,
+.hljs-name,
+.hljs-attribute {
+  color: #000080;
+  font-weight: normal;
+}
+
+.hljs-regexp,
+.hljs-link {
+  color: #009926;
+}
+
+.hljs-symbol,
+.hljs-bullet {
+  color: #990073;
+}
+
+.hljs-built_in,
+.hljs-builtin-name {
+  color: #0086b3;
+}
+
+.hljs-meta {
+  color: #999;
+  font-weight: bold;
+}
+
+.hljs-deletion {
+  background: #fdd;
+}
+
+.hljs-addition {
+  background: #dfd;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}
+
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="%F0%9F%93%8A-%D1%81%D1%82%D0%B0%D1%80%D1%82%D0%B0%D0%BF-%C2%AB%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0-%D0%B0%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0-%D1%82%D0%B5%D0%BD%D0%B4%D0%B5%D1%80%D0%BE%D0%B2%C2%BB-tenderinsight">📊 Стартап: «Система анализа тендеров» (TenderInsight)</h1>
+<p><em>ИИ-платформа для взвешенного участия малого и среднего бизнеса в тендерах</em></p>
+<hr>
+<h2 id="%F0%9F%93%91-%D0%BE%D0%B3%D0%BB%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5">📑 Оглавление</h2>
+<ol>
+<li><a href="#1-%D0%BA%D1%80%D0%B0%D1%82%D0%BA%D0%BE%D0%B5-%D0%BE%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%D0%B8%D0%B5-%D0%B8%D0%B4%D0%B5%D0%B8">Краткое описание идеи</a></li>
+<li><a href="#2-%D0%BF%D1%80%D0%BE%D0%B1%D0%BB%D0%B5%D0%BC%D0%B0-%D0%B8-%D1%86%D0%B5%D0%BB%D0%B5%D0%B2%D0%B0%D1%8F-%D0%B0%D1%83%D0%B4%D0%B8%D1%82%D0%BE%D1%80%D0%B8%D1%8F">Проблема и целевая аудитория</a></li>
+<li><a href="#3-%D1%82%D0%B5%D1%85%D0%BD%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%B5-%D0%BD%D0%B0%D0%BF%D1%80%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5">Технологическое направление</a></li>
+<li><a href="#4-%D0%BA%D0%BE%D0%BD%D0%BA%D1%83%D1%80%D0%B5%D0%BD%D1%82%D1%8B">Конкуренты</a>
 <ul>
-  <li>Hexlet</li>
+<li><a href="#41-%D1%80%D0%BE%D1%81%D1%81%D0%B8%D0%B9%D1%81%D0%BA%D0%B8%D0%B5-%D0%BA%D0%BE%D0%BD%D0%BA%D1%83%D1%80%D0%B5%D0%BD%D1%82%D1%8B">4.1 Российские конкуренты</a></li>
+<li><a href="#42-%D0%BC%D0%B5%D0%B6%D0%B4%D1%83%D0%BD%D0%B0%D1%80%D0%BE%D0%B4%D0%BD%D1%8B%D0%B5-%D0%B0%D0%BD%D0%B0%D0%BB%D0%BE%D0%B3%D0%B8">4.2 Международные аналоги</a></li>
 </ul>
+</li>
+<li><a href="#5-swot-%D0%B0%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7-%D0%BA%D0%BE%D0%BD%D0%BA%D1%83%D1%80%D0%B5%D0%BD%D1%82%D0%BD%D0%BE%D0%B9-%D1%81%D1%80%D0%B5%D0%B4%D1%8B">SWOT-анализ конкурентной среды</a></li>
+<li><a href="#6-%D1%81%D1%80%D0%B0%D0%B2%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5-%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D0%B9">Сравнение функций</a></li>
+<li><a href="#7-%D0%BA%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D0%B0-%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D0%B0">Команда проекта</a></li>
+<li><a href="#8-%D1%83%D0%BD%D0%B8%D0%BA%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B5-%D1%82%D0%BE%D1%80%D0%B3%D0%BE%D0%B2%D0%BE%D0%B5-%D0%BF%D1%80%D0%B5%D0%B4%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5-%D1%83%D1%82%D0%BF">Уникальное торговое предложение (УТП)</a></li>
+<li><a href="#9-%D1%82%D0%B5%D1%85%D0%BD%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B0%D1%8F-%D0%B0%D1%80%D1%85%D0%B8%D1%82%D0%B5%D0%BA%D1%82%D1%83%D1%80%D0%B0-tenderinsight">Техническая архитектура</a></li>
+<li><a href="#10-%D0%BE%D1%86%D0%B5%D0%BD%D0%BA%D0%B0-%D0%BD%D0%B5%D0%BE%D0%B1%D1%85%D0%BE%D0%B4%D0%B8%D0%BC%D1%8B%D1%85-%D0%B2%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B9-%D1%84%D0%B8%D0%BD%D0%B0%D0%BD%D1%81%D0%BE%D0%B2%D1%8B%D0%B9-%D0%BF%D0%BB%D0%B0%D0%BD">Оценка необходимых вложений</a></li>
+<li><a href="#11-%D0%BF%D0%BE%D1%87%D0%B5%D0%BC%D1%83-%D1%81%D1%82%D0%BE%D0%B8%D1%82-%D0%B2%D1%8B%D0%B1%D1%80%D0%B0%D1%82%D1%8C-%D1%8D%D1%82%D1%83-%D0%B8%D0%B4%D0%B5%D1%8E">Почему стоит выбрать эту идею?</a></li>
+</ol>
+<hr>
+<h2 id="1-%D0%BA%D1%80%D0%B0%D1%82%D0%BA%D0%BE%D0%B5-%D0%BE%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%D0%B8%D0%B5-%D0%B8%D0%B4%D0%B5%D0%B8">1. Краткое описание идеи</h2>
+<p><strong>TenderInsight</strong> — это ИИ-система для малых и средних компаний, участвующих в государственных и коммерческих тендерах.</p>
+<p>Система автоматически собирает данные о заказчиках и участниках, анализирует их репутацию, выявляет скрытые связи и прогнозирует вероятность выигрыша, чтобы помочь бизнесу принимать <strong>взвешенные решения</strong>: участвовать или не участвовать.</p>
+<hr>
+<h2 id="2-%D0%BF%D1%80%D0%BE%D0%B1%D0%BB%D0%B5%D0%BC%D0%B0-%D0%B8-%D1%86%D0%B5%D0%BB%D0%B5%D0%B2%D0%B0%D1%8F-%D0%B0%D1%83%D0%B4%D0%B8%D1%82%D0%BE%D1%80%D0%B8%D1%8F">2. Проблема и целевая аудитория</h2>
+<h3 id="%F0%9F%94%B4-%D0%BF%D1%80%D0%BE%D0%B1%D0%BB%D0%B5%D0%BC%D0%B0">🔴 Проблема</h3>
+<p>Участие в тендерах часто превращается в «лотерею» из-за:</p>
 <ul>
-  <li>Hexlet</li>
+<li>Отсутствия прозрачности истории заказчиков</li>
+<li>Сложности выявления аффилированных участников</li>
+<li>Высоких рисков финансовых и репутационных потерь</li>
+<li>Потери оплачиваемого времени на заведомо проигрышные закупки</li>
 </ul>
+<h3 id="%F0%9F%8E%AF-%D1%86%D0%B5%D0%BB%D0%B5%D0%B2%D0%B0%D1%8F-%D0%B0%D1%83%D0%B4%D0%B8%D1%82%D0%BE%D1%80%D0%B8%D1%8F">🎯 Целевая аудитория</h3>
 <ul>
-  <li>Hexlet</li>
+<li><strong>Малые и средние предприятия (МСП)</strong> — основные участники тендеров, но с ограниченными ресурсами на анализ</li>
+<li><strong>Частные компании</strong>, проводящие закупки и желающие минимизировать риски сотрудничества с недобросовестными поставщиками</li>
 </ul>
+<hr>
+<h2 id="3-%D1%82%D0%B5%D1%85%D0%BD%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%B5-%D0%BD%D0%B0%D0%BF%D1%80%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5">3. Технологическое направление</h2>
+<p>Стартап относится к следующим направлениям:</p>
 <ul>
-  <li>Hexlet</li>
-  <li>Hexlet</li>
-  <li>Hexlet</li>
+<li><strong>GovTech</strong> — основное (технологии для взаимодействия бизнеса с госсектором)</li>
+<li><strong>RegTech / ComplianceTech</strong> — оценка рисков и проверка контрагентов</li>
+<li><strong>AI-powered B2B SaaS</strong> — облачное решение с ИИ для бизнеса</li>
+<li><strong>Data Intelligence</strong> — агрегация и анализ больших данных из госреестров, СМИ, судебных баз</li>
 </ul>
-<img src="hexlet.png" alt="Картинка Hexlet" class="hexlet">
-<img src="hexlet.png" alt="Картинка Hexlet" class="hexlet">
-<main>
-  <h1>Р</h1>
-  <h2>п</h2>
-  <section class="study">
-    <h2>Образование</h2>
-    <ul>
-      <li class="place-of-study" Место="" учёбы="" №1=""></li>
-      <li class="place-of-study" Место="" учёбы="" №2=""></li>
-      <li class="place-of-study" Место="" учёбы="" №3=""></li>
-    </ul>
-  </section>
-</main>
+<hr>
+<h2 id="4-%D0%BA%D0%BE%D0%BD%D0%BA%D1%83%D1%80%D0%B5%D0%BD%D1%82%D1%8B">4. Конкуренты</h2>
+<h3 id="41-%D1%80%D0%BE%D1%81%D1%81%D0%B8%D0%B9%D1%81%D0%BA%D0%B8%D0%B5-%D0%BA%D0%BE%D0%BD%D0%BA%D1%83%D1%80%D0%B5%D0%BD%D1%82%D1%8B">4.1 Российские конкуренты</h3>
+<table>
+<thead>
+<tr>
+<th>Название</th>
+<th>Тип</th>
+<th>Сильные стороны</th>
+<th>Слабые стороны</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Контур.Закупки</strong></td>
+<td>B2B SaaS</td>
+<td>Интеграция с ЕИС, подача заявок, уведомления</td>
+<td>Нет ИИ, нет анализа рисков, нет прогнозов</td>
+</tr>
+<tr>
+<td><strong>СберБизнес (Закупки)</strong></td>
+<td>Банковский модуль</td>
+<td>Доступ через кабинет, связь с гарантиями</td>
+<td>Поверхностная аналитика, нет глубины</td>
+</tr>
+<tr>
+<td><strong>СПАРК / Контур.Фокус</strong></td>
+<td>Бизнес-справочник</td>
+<td>Богатые данные о компаниях и связях</td>
+<td>Не привязан к тендерам, сложен для МСП</td>
+</tr>
+<tr>
+<td><strong>zakupki.gov.ru</strong></td>
+<td>Госплатформа</td>
+<td>Полная и бесплатная база закупок</td>
+<td>Нет аналитики, плохой UX</td>
+</tr>
+</tbody>
+</table>
+<h3 id="42-%D0%BC%D0%B5%D0%B6%D0%B4%D1%83%D0%BD%D0%B0%D1%80%D0%BE%D0%B4%D0%BD%D1%8B%D0%B5-%D0%B0%D0%BD%D0%B0%D0%BB%D0%BE%D0%B3%D0%B8">4.2 Международные аналоги</h3>
+<table>
+<thead>
+<tr>
+<th>Название</th>
+<th>Регион</th>
+<th>Особенности</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>TenderAlpha</strong></td>
+<td>США / ЕС</td>
+<td>ИИ для прогноза победителей госзакупок</td>
+</tr>
+<tr>
+<td><strong>BidOps</strong></td>
+<td>США</td>
+<td>AI-оптимизация ставок в B2B-тендерах</td>
+</tr>
+<tr>
+<td><strong>Proactis / Jaggaer</strong></td>
+<td>Европа</td>
+<td>Enterprise-решения (слишком дороги для МСП)</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>💡 <strong>Вывод</strong>: На российском рынке <strong>нет решения</strong>, сочетающего <strong>тендерные данные + ИИ-прогноз + простоту для МСП</strong>.</p>
+</blockquote>
+<hr>
+<h2 id="5-swot-%D0%B0%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7-%D0%BA%D0%BE%D0%BD%D0%BA%D1%83%D1%80%D0%B5%D0%BD%D1%82%D0%BD%D0%BE%D0%B9-%D1%81%D1%80%D0%B5%D0%B4%D1%8B">5. SWOT-анализ конкурентной среды</h2>
+<h3 id="%E2%9C%85-strengths-%D1%81%D0%B8%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5-%D1%81%D1%82%D0%BE%D1%80%D0%BE%D0%BD%D1%8B-%D0%BA%D0%BE%D0%BD%D0%BA%D1%83%D1%80%D0%B5%D0%BD%D1%82%D0%BE%D0%B2">✅ Strengths (Сильные стороны конкурентов)</h3>
+<ul>
+<li>Высокая узнаваемость (Контур, Сбер)</li>
+<li>Интеграция с госреестрами и банковскими сервисами</li>
+<li>Богатые базы данных (СПАРК)</li>
+<li>Официальный статус госплатформ</li>
+</ul>
+<h3 id="%E2%9D%8C-weaknesses-%D1%81%D0%BB%D0%B0%D0%B1%D1%8B%D0%B5-%D1%81%D1%82%D0%BE%D1%80%D0%BE%D0%BD%D1%8B-%D0%BA%D0%BE%D0%BD%D0%BA%D1%83%D1%80%D0%B5%D0%BD%D1%82%D0%BE%D0%B2">❌ Weaknesses (Слабые стороны конкурентов)</h3>
+<ul>
+<li>Отсутствие ИИ и прогнозной аналитики</li>
+<li>Нет оценки рисков участия</li>
+<li>Сложность интерпретации для малого бизнеса</li>
+<li>Нет чётких рекомендаций</li>
+</ul>
+<h3 id="%F0%9F%8C%B1-opportunities-%D0%B2%D0%BE%D0%B7%D0%BC%D0%BE%D0%B6%D0%BD%D0%BE%D1%81%D1%82%D0%B8">🌱 Opportunities (Возможности)</h3>
+<ul>
+<li>Пробел на рынке: нет ИИ-решения для анализа тендерных рисков</li>
+<li>Господдержка участия МСП в закупках</li>
+<li>Потенциал интеграций (банки, ЦПМСП, CRM)</li>
+<li>Экспорт в СНГ и Восточную Европу</li>
+</ul>
+<h3 id="%E2%9A%A0%EF%B8%8F-threats-%D1%83%D0%B3%D1%80%D0%BE%D0%B7%D1%8B">⚠️ Threats (Угрозы)</h3>
+<ul>
+<li>Вход крупных игроков (Сбер, Контур)</li>
+<li>Зависимость от открытости госAPI</li>
+<li>Низкая готовность МСП платить за SaaS</li>
+<li>Регуляторные риски (ФЗ-152, GDPR)</li>
+</ul>
+<blockquote>
+<p><strong>Ключевой вывод</strong>: Конкуренты дают <strong>информацию</strong>. Мы даём <strong>решение</strong>.</p>
+</blockquote>
+<hr>
+<h2 id="6-%D1%81%D1%80%D0%B0%D0%B2%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5-%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D0%B9">6. Сравнение функций</h2>
+<table>
+<thead>
+<tr>
+<th>Функция</th>
+<th>TenderInsight</th>
+<th>Контур.Закупки</th>
+<th>СберБизнес</th>
+<th>СПАРК</th>
+<th>zakupki.gov.ru</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Поиск тендеров</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>❌</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Анализ заказчика</td>
+<td>✅ (рейтинг)</td>
+<td>⚠️</td>
+<td>⚠️</td>
+<td>✅ (вручную)</td>
+<td>❌</td>
+</tr>
+<tr>
+<td>Выявление аффилированности</td>
+<td>✅ (ИИ + графы)</td>
+<td>❌</td>
+<td>❌</td>
+<td>⚠️</td>
+<td>❌</td>
+</tr>
+<tr>
+<td>Прогноз выигрыша</td>
+<td>✅</td>
+<td>❌</td>
+<td>❌</td>
+<td>❌</td>
+<td>❌</td>
+</tr>
+<tr>
+<td>Рекомендация: участвовать?</td>
+<td>✅</td>
+<td>❌</td>
+<td>❌</td>
+<td>❌</td>
+<td>❌</td>
+</tr>
+<tr>
+<td>Простота для МСП</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>❌</td>
+<td>❌</td>
+</tr>
+<tr>
+<td>Цена (от)</td>
+<td><strong>990 ₽/мес</strong></td>
+<td>1 500 ₽/мес</td>
+<td>Бесплатно (базово)</td>
+<td>3 000 ₽/мес</td>
+<td>Бесплатно</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="7-%D0%BA%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D0%B0-%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D0%B0">7. Команда проекта</h2>
+<ul>
+<li><strong>Product-менеджер</strong> — фокус на ценность для МСП</li>
+<li><strong>Data Scientist / ML-инженер</strong> — ИИ-модели, NLP, графовые нейросети</li>
+<li><strong>Backend-разработчик</strong> — интеграция с госAPI, обработка Big Data</li>
+<li><strong>Frontend-разработчик + UX/UI-дизайнер</strong> — простой интерфейс</li>
+<li><strong>Эксперт по госзакупкам</strong> — предметная экспертиза, compliance</li>
+<li><strong>DevOps-инженер</strong> — масштабирование и надёжность</li>
+</ul>
+<hr>
+<h2 id="8-%D1%83%D0%BD%D0%B8%D0%BA%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B5-%D1%82%D0%BE%D1%80%D0%B3%D0%BE%D0%B2%D0%BE%D0%B5-%D0%BF%D1%80%D0%B5%D0%B4%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5-%D1%83%D1%82%D0%BF">8. Уникальное торговое предложение (УТП)</h2>
+<blockquote>
+<p><strong>TenderInsight — первая в РФ ИИ-система, которая не просто показывает тендер, а оценивает его риски и даёт чёткую рекомендацию для малого бизнеса.</strong></p>
+</blockquote>
+<p>Мы превращаем хаотичные открытые данные в <strong>понятный, actionable insight</strong>:</p>
+<blockquote>
+<p><em>«Этот тендер имеет 85% риска &quot;закрытости&quot;. Не участвуйте — сэкономите 40 часов и 150 000 ₽».</em></p>
+</blockquote>
+<hr>
+<h2 id="9-%D1%82%D0%B5%D1%85%D0%BD%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B0%D1%8F-%D0%B0%D1%80%D1%85%D0%B8%D1%82%D0%B5%D0%BA%D1%82%D1%83%D1%80%D0%B0-tenderinsight">9. Техническая архитектура TenderInsight</h2>
+<p>Архитектура строится по принципу микросервисов для обеспечения масштабируемости и отказоустойчивости.</p>
+<pre class="hljs"><code><div>┌─────────────────────────────────────────────────────────────────┐
+│                        Клиентское приложение                    │
+│              (Web, Мобильное App, Telegram Bot)                 │
+└─────────────────┬─────────────────────────────┬─────────────────┘
+                  │                             │
+                  │ HTTPS / REST API / WebSocket│
+                  │                             │
+┌─────────────────▼─────────────────────────────▼─────────────────┐
+│                    API Gateway (Nginx / Kong)                   │
+│        (Маршрутизация, аутентификация, ограничение запросов)    │
+└─────┬─────────────┬─────────────┬──────────────┬────────┬───────┘
+      │             │             │              │        │
+┌─────▼─────┐ ┌─────▼─────┐ ┌─────▼──────┐ ┌─────▼────┐ ┌─▼──────────┐
+│  Сервис   │ │  Сервис   │ │  Сервис    │ │ Сервис   │ │ Сервис     │
+│ Пользова- │ │ Поиска и  │ │  Аналитики │ │Платежей  │ │Уведомлений │
+│  телей &amp;  │ │ Монито-   │ │   &amp; AI     │ │ &amp; Билли- │ │ &amp; Рассылок │
+│   Auth    │ │  ринга    │ │            │ │  нга     │ │            │
+└───────────┘ └───────────┘ └────────────┘ └──────────┘ └────────────┘
+                                      │
+                              ┌───────▼───────┐
+                              │   Очереди     │
+                              │   (RabbitMQ)  │
+                              └───────┬───────┘
+                                      │
+      ┌─────────────────────────────────────────────────────────┐
+      │                     Data Layer                          │
+      └─────────────────────────────────────────────────────────┘
+┌─────────────┐ ┌─────────────┐ ┌─────────────┐ ┌─────────────┐
+│   База      │ │   Векторная │ │   Кэш       │ │  Хранилище  │
+│  Данных     │ │    База     │ │  (Redis)    │ │   Файлов    │
+│ (PostgreSQL)│ │ (pgvector / │ │             │ │   (S3)      │
+│             │ │   Chroma)   │ │             │ │             │
+└─────────────┘ └─────────────┘ └─────────────┘ └─────────────┘
+                                      │
+┌─────────────────────────────────────────────────────────┐
+│                    Внешние сервисы                       │
+└─────────────────────────────────────────────────────────┘
+      │              │                │              │
+┌─────▼─────┐  ┌─────▼─────┐  ┌───────▼──────┐  ┌────▼──────┐
+│   ЕИС     │  │   ФНС /   │  │   Судебные   │  │   СМИ &amp;   │
+│ (API 44-ФЗ│  │  СПАРК-   │  │   базы &amp;     │  │ Соцсети   │
+│  223-ФЗ)  │  │ Интерфакс │  │  ФССП/Федрес │  │ (API)     │
+└───────────┘  └───────────┘  └──────────────┘  └───────────┘
+</div></code></pre>
+<p><strong>Ключевые компоненты:</strong></p>
+<ol>
+<li><strong>Data Ingestion Layer (Сбор данных):</strong> Сервис мониторинга постоянно парсит открытые API (ЕИС, ФНС) и веб-источники, загружая данные в сыром виде.</li>
+<li><strong>ETL Pipeline (Обработка):</strong> Данные очищаются, нормализуются и обогащаются.</li>
+<li><strong>AI &amp; Analytics Core (Ядро анализа):</strong>
+<ul>
+<li><strong>NLP-движок:</strong> Обрабатывает тексты тендерной документации, выявляет субъективные критерии, анализирует тональность.</li>
+<li><strong>Графовая база данных:</strong> Строит и анализирует сети связей между заказчиками и поставщиками для выявления аффилированности.</li>
+<li><strong>ML-модели:</strong> На основе исторических данных (результаты прошлых тендеров, репутационные метки) обучаются модели для прогнозирования вероятности выигрыша.</li>
+</ul>
+</li>
+<li><strong>API Gateway:</strong> Единая точка входа для всех клиентов, управляет доступом.</li>
+<li><strong>Сервисная архитектура:</strong> Позволяет независимо масштабировать самые нагруженные части системы (например, сервис аналитики).</li>
+</ol>
+<hr>
+<h2 id="10-%D0%BE%D1%86%D0%B5%D0%BD%D0%BA%D0%B0-%D0%BD%D0%B5%D0%BE%D0%B1%D1%85%D0%BE%D0%B4%D0%B8%D0%BC%D1%8B%D1%85-%D0%B2%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B9-%D1%84%D0%B8%D0%BD%D0%B0%D0%BD%D1%81%D0%BE%D0%B2%D1%8B%D0%B9-%D0%BF%D0%BB%D0%B0%D0%BD">10. Оценка необходимых вложений (Финансовый план)</h2>
+<p>Вложения делятся на два основных этапа: <strong>Запуск MVP</strong> и <strong>Масштабирование</strong>.</p>
+<h3 id="%D1%8D%D1%82%D0%B0%D0%BF-1-%D0%B7%D0%B0%D0%BF%D1%83%D1%81%D0%BA-mvp-6-9-%D0%BC%D0%B5%D1%81%D1%8F%D1%86%D0%B5%D0%B2">Этап 1: Запуск MVP (6-9 месяцев)</h3>
+<p><em>Цель: Создание рабочего прототипа с базовым функционалом анализа и привлечение первых 100-200 платящих клиентов.</em></p>
+<table>
+<thead>
+<tr>
+<th>Статья расходов</th>
+<th>Сумма (руб.)</th>
+<th>Комментарий</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Команда (ФОТ)</strong></td>
+<td>2 500 000</td>
+<td>3-4 чел (TeamLead Fullstack, Data Scientist, UX/UI) на 6-9 мес. Частично возможна аутсорс-разработка.</td>
+</tr>
+<tr>
+<td><strong>Оборудование &amp; Хостинг</strong></td>
+<td>300 000</td>
+<td>Аренда серверов (Yandex Cloud/Selectel), домены, лицензии ПО.</td>
+</tr>
+<tr>
+<td><strong>Маркетинг &amp; Юридическое сопровождение</strong></td>
+<td>200 000</td>
+<td>Создание лендинга, контекстная реклама, регистрация юрлица.</td>
+</tr>
+<tr>
+<td><strong>Резервный фонд</strong></td>
+<td>200 000</td>
+<td>На непредвиденные расходы.</td>
+</tr>
+<tr>
+<td><strong>ИТОГО на MVP</strong></td>
+<td><strong>~3 200 000 руб.</strong></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Источники финансирования на этапе MVP:</strong></p>
+<ul>
+<li>Собственные средства основателей (бутстрэппинг)</li>
+<li>Гранты (Фонд Бортника, Фонд содействия инновациям, IT-кластеры)</li>
+<li>Ангельские инвестиции</li>
+</ul>
+<h3 id="%D1%8D%D1%82%D0%B0%D0%BF-2-%D0%BC%D0%B0%D1%81%D1%88%D1%82%D0%B0%D0%B1%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5-12-18-%D0%BC%D0%B5%D1%81%D1%8F%D1%86%D0%B5%D0%B2">Этап 2: Масштабирование (12-18 месяцев)</h3>
+<p><em>Цель: Увеличение функционала, активный рост клиентской базы (1000+ клиентов), выход на окупаемость.</em></p>
+<table>
+<thead>
+<tr>
+<th>Статья расходов</th>
+<th>Сумма (руб.)</th>
+<th>Комментарий</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Команда (ФОТ)</strong></td>
+<td>6 000 000 - 9 000 000</td>
+<td>Расширение команды до 6-8 чел: 2 бэкендера, 1 фронтенд, 1 дата-сайентист, 1 продакт/аналитик, 1 маркетолог, 1 саппорт.</td>
+</tr>
+<tr>
+<td><strong>Инфраструктура &amp; Данные</strong></td>
+<td>1 000 000 - 1 500 000</td>
+<td>Мощные сервера для AI, платные API для данных (СПАРК), CDN.</td>
+</tr>
+<tr>
+<td><strong>Маркетинг &amp; Sales</strong></td>
+<td>1 500 000 - 2 000 000</td>
+<td>Активные рекламные кампании, контент-маркетинг, участие в выставках, зарплата менеджера по продажам.</td>
+</tr>
+<tr>
+<td><strong>Операционные расходы</strong></td>
+<td>500 000</td>
+<td>Офис, связь, бухгалтерское обслуживание и пр.</td>
+</tr>
+<tr>
+<td><strong>ИТОГО на масштабирование</strong></td>
+<td><strong>~9 000 000 - 13 000 000 руб.</strong></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Источники финансирования на этапе масштабирования:</strong></p>
+<ul>
+<li>Венчурные инвестиции (после демонстрации успешного MVP)</li>
+<li>Краудфандинг (для B2B-проектов менее актуален)</li>
+<li>Реинвестирование прибыли (на поздних этапах)</li>
+</ul>
+<p><strong>Расчет окупаемости (упрощенный):</strong></p>
+<ul>
+<li>Целевая аудитория в РФ: ~500 000 активных МСП-участников закупок.</li>
+<li>План по захвату рынка: 1% (5 000 клиентов) за 3 года.</li>
+<li>Средний чек (ARPU): ~1 500 руб./мес.</li>
+<li><strong>Годовая выручка при достижении плана:</strong> 5 000 × 1 500 × 12 = <strong>90 000 000 руб./год.</strong></li>
+<li><strong>Окупаемость:</strong> При достижении плановых показателей окупаемость полных вложений (~15-20 млн руб.) наступит через 2-3 года после начала этапа масштабирования.</li>
+</ul>
+<hr>
+<h2 id="11-%D0%BF%D0%BE%D1%87%D0%B5%D0%BC%D1%83-%D1%81%D1%82%D0%BE%D0%B8%D1%82-%D0%B2%D1%8B%D0%B1%D1%80%D0%B0%D1%82%D1%8C-%D1%8D%D1%82%D1%83-%D0%B8%D0%B4%D0%B5%D1%8E">11. Почему стоит выбрать эту идею?</h2>
+<blockquote>
+<p><strong>Другие студенты должны выбрать эту идею, потому что она решает реальную, острую и массовую боль малого бизнеса — участие в тендерах без понимания рисков.</strong></p>
+<p>Наша система с помощью ИИ превращает «тендерную лотерею» в <strong>предсказуемый, управляемый процесс</strong>, помогая компаниям избегать убытков, тратить время с умом и повышать ROI от участия в закупках.</p>
+</blockquote>
+<hr>
+<h3 id="%E2%9C%85-%D0%B8%D1%82%D0%BE%D0%B3%D0%BE%D0%B2%D1%8B%D0%B9-%D0%B2%D0%B5%D1%80%D0%B4%D0%B8%D0%BA%D1%82">✅ Итоговый вердикт</h3>
+<p>Идея <strong>TenderInsight</strong> проходит проверку на жизнеспособность по всем ключевым параметрам:</p>
+<ol>
+<li><strong>Проблема</strong> — реальна и остра для целевой аудитории.</li>
+<li><strong>Рынок</strong> — существует устойчивый спрос и подтвержденная ниша.</li>
+<li><strong>Конкуренция</strong> — прямое отсутствие аналогов с тем же УТП.</li>
+<li><strong>Технологии</strong> — архитектура использует современный и масштабируемый стек.</li>
+<li><strong>Финансы</strong> — объем вложений сопоставим со стартапами в B2B SaaS, прогноз окупаемости реалистичен.</li>
+</ol>
+
+</body>
+</html>
