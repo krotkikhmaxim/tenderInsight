@@ -1,816 +1,800 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 <head>
-<title>README.md</title>
-<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
-
-<style>
-/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
-/*---------------------------------------------------------------------------------------------
- *  Copyright (c) Microsoft Corporation. All rights reserved.
- *  Licensed under the MIT License. See License.txt in the project root for license information.
- *--------------------------------------------------------------------------------------------*/
-
-body {
-	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
-	font-size: var(--vscode-markdown-font-size, 14px);
-	padding: 0 26px;
-	line-height: var(--vscode-markdown-line-height, 22px);
-	word-wrap: break-word;
-}
-
-#code-csp-warning {
-	position: fixed;
-	top: 0;
-	right: 0;
-	color: white;
-	margin: 16px;
-	text-align: center;
-	font-size: 12px;
-	font-family: sans-serif;
-	background-color:#444444;
-	cursor: pointer;
-	padding: 6px;
-	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
-}
-
-#code-csp-warning:hover {
-	text-decoration: none;
-	background-color:#007acc;
-	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
-}
-
-body.scrollBeyondLastLine {
-	margin-bottom: calc(100vh - 22px);
-}
-
-body.showEditorSelection .code-line {
-	position: relative;
-}
-
-body.showEditorSelection .code-active-line:before,
-body.showEditorSelection .code-line:hover:before {
-	content: "";
-	display: block;
-	position: absolute;
-	top: 0;
-	left: -12px;
-	height: 100%;
-}
-
-body.showEditorSelection li.code-active-line:before,
-body.showEditorSelection li.code-line:hover:before {
-	left: -30px;
-}
-
-.vscode-light.showEditorSelection .code-active-line:before {
-	border-left: 3px solid rgba(0, 0, 0, 0.15);
-}
-
-.vscode-light.showEditorSelection .code-line:hover:before {
-	border-left: 3px solid rgba(0, 0, 0, 0.40);
-}
-
-.vscode-light.showEditorSelection .code-line .code-line:hover:before {
-	border-left: none;
-}
-
-.vscode-dark.showEditorSelection .code-active-line:before {
-	border-left: 3px solid rgba(255, 255, 255, 0.4);
-}
-
-.vscode-dark.showEditorSelection .code-line:hover:before {
-	border-left: 3px solid rgba(255, 255, 255, 0.60);
-}
-
-.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
-	border-left: none;
-}
-
-.vscode-high-contrast.showEditorSelection .code-active-line:before {
-	border-left: 3px solid rgba(255, 160, 0, 0.7);
-}
-
-.vscode-high-contrast.showEditorSelection .code-line:hover:before {
-	border-left: 3px solid rgba(255, 160, 0, 1);
-}
-
-.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
-	border-left: none;
-}
-
-img {
-	max-width: 100%;
-	max-height: 100%;
-}
-
-a {
-	text-decoration: none;
-}
-
-a:hover {
-	text-decoration: underline;
-}
-
-a:focus,
-input:focus,
-select:focus,
-textarea:focus {
-	outline: 1px solid -webkit-focus-ring-color;
-	outline-offset: -1px;
-}
-
-hr {
-	border: 0;
-	height: 2px;
-	border-bottom: 2px solid;
-}
-
-h1 {
-	padding-bottom: 0.3em;
-	line-height: 1.2;
-	border-bottom-width: 1px;
-	border-bottom-style: solid;
-}
-
-h1, h2, h3 {
-	font-weight: normal;
-}
-
-table {
-	border-collapse: collapse;
-}
-
-table > thead > tr > th {
-	text-align: left;
-	border-bottom: 1px solid;
-}
-
-table > thead > tr > th,
-table > thead > tr > td,
-table > tbody > tr > th,
-table > tbody > tr > td {
-	padding: 5px 10px;
-}
-
-table > tbody > tr + tr > td {
-	border-top: 1px solid;
-}
-
-blockquote {
-	margin: 0 7px 0 5px;
-	padding: 0 16px 0 10px;
-	border-left-width: 5px;
-	border-left-style: solid;
-}
-
-code {
-	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
-	font-size: 1em;
-	line-height: 1.357em;
-}
-
-body.wordWrap pre {
-	white-space: pre-wrap;
-}
-
-pre:not(.hljs),
-pre.hljs code > div {
-	padding: 16px;
-	border-radius: 3px;
-	overflow: auto;
-}
-
-pre code {
-	color: var(--vscode-editor-foreground);
-	tab-size: 4;
-}
-
-/** Theming */
-
-.vscode-light pre {
-	background-color: rgba(220, 220, 220, 0.4);
-}
-
-.vscode-dark pre {
-	background-color: rgba(10, 10, 10, 0.4);
-}
-
-.vscode-high-contrast pre {
-	background-color: rgb(0, 0, 0);
-}
-
-.vscode-high-contrast h1 {
-	border-color: rgb(0, 0, 0);
-}
-
-.vscode-light table > thead > tr > th {
-	border-color: rgba(0, 0, 0, 0.69);
-}
-
-.vscode-dark table > thead > tr > th {
-	border-color: rgba(255, 255, 255, 0.69);
-}
-
-.vscode-light h1,
-.vscode-light hr,
-.vscode-light table > tbody > tr + tr > td {
-	border-color: rgba(0, 0, 0, 0.18);
-}
-
-.vscode-dark h1,
-.vscode-dark hr,
-.vscode-dark table > tbody > tr + tr > td {
-	border-color: rgba(255, 255, 255, 0.18);
-}
-
-</style>
-
-<style>
-/*
-
-github.com style (c) Vasily Polovnyov <vast@whiteants.net>
-
-*/
-
-.hljs {
-  display: block;
-  overflow-x: auto;
-  padding: 0.5em;
-  color: #333;
-  background: #f8f8f8;
-}
-
-.hljs-comment,
-.hljs-quote {
-  color: #998;
-  font-style: italic;
-}
-
-.hljs-keyword,
-.hljs-selector-tag,
-.hljs-subst {
-  color: #333;
-  font-weight: bold;
-}
-
-.hljs-number,
-.hljs-literal,
-.hljs-variable,
-.hljs-template-variable,
-.hljs-tag .hljs-attr {
-  color: #008080;
-}
-
-.hljs-string,
-.hljs-doctag {
-  color: #d14;
-}
-
-.hljs-title,
-.hljs-section,
-.hljs-selector-id {
-  color: #900;
-  font-weight: bold;
-}
-
-.hljs-subst {
-  font-weight: normal;
-}
-
-.hljs-type,
-.hljs-class .hljs-title {
-  color: #458;
-  font-weight: bold;
-}
-
-.hljs-tag,
-.hljs-name,
-.hljs-attribute {
-  color: #000080;
-  font-weight: normal;
-}
-
-.hljs-regexp,
-.hljs-link {
-  color: #009926;
-}
-
-.hljs-symbol,
-.hljs-bullet {
-  color: #990073;
-}
-
-.hljs-built_in,
-.hljs-builtin-name {
-  color: #0086b3;
-}
-
-.hljs-meta {
-  color: #999;
-  font-weight: bold;
-}
-
-.hljs-deletion {
-  background: #fdd;
-}
-
-.hljs-addition {
-  background: #dfd;
-}
-
-.hljs-emphasis {
-  font-style: italic;
-}
-
-.hljs-strong {
-  font-weight: bold;
-}
-
-</style>
-
-<style>
-/*
- * Markdown PDF CSS
- */
-
- body {
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
-	padding: 0 12px;
-}
-
-pre {
-	background-color: #f8f8f8;
-	border: 1px solid #cccccc;
-	border-radius: 3px;
-	overflow-x: auto;
-	white-space: pre-wrap;
-	overflow-wrap: break-word;
-}
-
-pre:not(.hljs) {
-	padding: 23px;
-	line-height: 19px;
-}
-
-blockquote {
-	background: rgba(127, 127, 127, 0.1);
-	border-color: rgba(0, 122, 204, 0.5);
-}
-
-.emoji {
-	height: 1.4em;
-}
-
-code {
-	font-size: 14px;
-	line-height: 19px;
-}
-
-/* for inline code */
-:not(pre):not(.hljs) > code {
-	color: #C9AE75; /* Change the old color so it seems less like an error */
-	font-size: inherit;
-}
-
-/* Page Break : use <div class="page"/> to insert page break
--------------------------------------------------------- */
-.page {
-	page-break-after: always;
-}
-
-</style>
-
-<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TenderInsight - ИИ-платформа для анализа тендеров</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Основные стили */
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+            --success: #2ecc71;
+            --warning: #f39c12;
+            --gradient: linear-gradient(135deg, #3498db, #2c3e50);
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --radius: 8px;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+        
+        a {
+            text-decoration: none;
+            color: var(--secondary);
+            transition: color 0.3s;
+        }
+        
+        a:hover {
+            color: var(--accent);
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Шапка */
+        header {
+            background: var(--gradient);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .logo i {
+            font-size: 2rem;
+        }
+        
+        .logo h1 {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+        }
+        
+        nav a {
+            color: white;
+            font-weight: 500;
+            padding: 0.5rem 0;
+            position: relative;
+        }
+        
+        nav a:hover {
+            color: var(--light);
+        }
+        
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--light);
+            transition: width 0.3s;
+        }
+        
+        nav a:hover::after {
+            width: 100%;
+        }
+        
+        /* Герой секция */
+        .hero {
+            background: var(--gradient);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: var(--accent);
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s;
+            box-shadow: var(--shadow);
+        }
+        
+        .cta-button:hover {
+            background-color: #c0392b;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+            color: white;
+        }
+        
+        /* Секции */
+        section {
+            padding: 4rem 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+        
+        .section-title h2 {
+            font-size: 2rem;
+            color: var(--primary);
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--secondary);
+        }
+        
+        /* О проекте */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        .about-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+        
+        .about-text p {
+            margin-bottom: 1.5rem;
+        }
+        
+        .about-features {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+        
+        .feature {
+            background: white;
+            padding: 1.5rem;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            transition: transform 0.3s;
+        }
+        
+        .feature:hover {
+            transform: translateY(-5px);
+        }
+        
+        .feature i {
+            font-size: 2rem;
+            color: var(--secondary);
+            margin-bottom: 1rem;
+        }
+        
+        .feature h4 {
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+        }
+        
+        /* Проблема и решение */
+        .problem-solution {
+            background-color: var(--light);
+        }
+        
+        .problem-solution-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+        
+        .problem, .solution {
+            background: white;
+            padding: 2rem;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+        }
+        
+        .problem h3, .solution h3 {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+        
+        .problem h3 i {
+            color: var(--accent);
+        }
+        
+        .solution h3 i {
+            color: var(--success);
+        }
+        
+        .problem ul, .solution ul {
+            list-style: none;
+        }
+        
+        .problem li, .solution li {
+            margin-bottom: 0.8rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        
+        .problem li::before {
+            content: '❌';
+            position: absolute;
+            left: 0;
+        }
+        
+        .solution li::before {
+            content: '✅';
+            position: absolute;
+            left: 0;
+        }
+        
+        /* Конкуренты */
+        .competitors-content {
+            overflow-x: auto;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            box-shadow: var(--shadow);
+            border-radius: var(--radius);
+            overflow: hidden;
+        }
+        
+        th, td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+        
+        th {
+            background-color: var(--primary);
+            color: white;
+            font-weight: 600;
+        }
+        
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+        
+        .highlight {
+            background-color: rgba(52, 152, 219, 0.1);
+            font-weight: 600;
+        }
+        
+        /* УТП */
+        .usp {
+            background: var(--gradient);
+            color: white;
+            text-align: center;
+        }
+        
+        .usp-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .usp blockquote {
+            font-size: 1.5rem;
+            font-style: italic;
+            margin-bottom: 2rem;
+            position: relative;
+            padding: 0 2rem;
+        }
+        
+        .usp blockquote::before, .usp blockquote::after {
+            content: '"';
+            font-size: 3rem;
+            color: rgba(255, 255, 255, 0.3);
+            position: absolute;
+        }
+        
+        .usp blockquote::before {
+            top: -1rem;
+            left: 0;
+        }
+        
+        .usp blockquote::after {
+            bottom: -2rem;
+            right: 0;
+        }
+        
+        /* Команда */
+        .team {
+            background-color: var(--light);
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .team-member {
+            background: white;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s;
+        }
+        
+        .team-member:hover {
+            transform: translateY(-5px);
+        }
+        
+        .member-info {
+            padding: 1.5rem;
+            text-align: center;
+        }
+        
+        .member-info h4 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .member-info p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        /* Футер */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 3rem 0 1.5rem;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-section h3 {
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-section h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--secondary);
+        }
+        
+        .footer-section ul {
+            list-style: none;
+        }
+        
+        .footer-section li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer-section a {
+            color: #ddd;
+        }
+        
+        .footer-section a:hover {
+            color: white;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+        
+        /* Адаптивность */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .hero h2 {
+                font-size: 2rem;
+            }
+            
+            .about-content, .problem-solution-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .about-features {
+                grid-template-columns: 1fr;
+            }
+            
+            .team-grid {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            }
+        }
+    </style>
 </head>
 <body>
-  <script>
-    mermaid.initialize({
-      startOnLoad: true,
-      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
-          ? 'dark'
-          : 'default'
-    });
-  </script>
-<h1 id="%F0%9F%93%8A-%D1%81%D1%82%D0%B0%D1%80%D1%82%D0%B0%D0%BF-%C2%AB%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0-%D0%B0%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0-%D1%82%D0%B5%D0%BD%D0%B4%D0%B5%D1%80%D0%BE%D0%B2%C2%BB-tenderinsight">📊 Стартап: «Система анализа тендеров» (TenderInsight)</h1>
-<p><em>ИИ-платформа для взвешенного участия малого и среднего бизнеса в тендерах</em></p>
-<hr>
-<h2 id="%F0%9F%93%91-%D0%BE%D0%B3%D0%BB%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5">📑 Оглавление</h2>
-<ol>
-<li><a href="#1-%D0%BA%D1%80%D0%B0%D1%82%D0%BA%D0%BE%D0%B5-%D0%BE%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%D0%B8%D0%B5-%D0%B8%D0%B4%D0%B5%D0%B8">Краткое описание идеи</a></li>
-<li><a href="#2-%D0%BF%D1%80%D0%BE%D0%B1%D0%BB%D0%B5%D0%BC%D0%B0-%D0%B8-%D1%86%D0%B5%D0%BB%D0%B5%D0%B2%D0%B0%D1%8F-%D0%B0%D1%83%D0%B4%D0%B8%D1%82%D0%BE%D1%80%D0%B8%D1%8F">Проблема и целевая аудитория</a></li>
-<li><a href="#3-%D1%82%D0%B5%D1%85%D0%BD%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%B5-%D0%BD%D0%B0%D0%BF%D1%80%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5">Технологическое направление</a></li>
-<li><a href="#4-%D0%BA%D0%BE%D0%BD%D0%BA%D1%83%D1%80%D0%B5%D0%BD%D1%82%D1%8B">Конкуренты</a>
-<ul>
-<li><a href="#41-%D1%80%D0%BE%D1%81%D1%81%D0%B8%D0%B9%D1%81%D0%BA%D0%B8%D0%B5-%D0%BA%D0%BE%D0%BD%D0%BA%D1%83%D1%80%D0%B5%D0%BD%D1%82%D1%8B">4.1 Российские конкуренты</a></li>
-<li><a href="#42-%D0%BC%D0%B5%D0%B6%D0%B4%D1%83%D0%BD%D0%B0%D1%80%D0%BE%D0%B4%D0%BD%D1%8B%D0%B5-%D0%B0%D0%BD%D0%B0%D0%BB%D0%BE%D0%B3%D0%B8">4.2 Международные аналоги</a></li>
-</ul>
-</li>
-<li><a href="#5-swot-%D0%B0%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7-%D0%BA%D0%BE%D0%BD%D0%BA%D1%83%D1%80%D0%B5%D0%BD%D1%82%D0%BD%D0%BE%D0%B9-%D1%81%D1%80%D0%B5%D0%B4%D1%8B">SWOT-анализ конкурентной среды</a></li>
-<li><a href="#6-%D1%81%D1%80%D0%B0%D0%B2%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5-%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D0%B9">Сравнение функций</a></li>
-<li><a href="#7-%D0%BA%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D0%B0-%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D0%B0">Команда проекта</a></li>
-<li><a href="#8-%D1%83%D0%BD%D0%B8%D0%BA%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B5-%D1%82%D0%BE%D1%80%D0%B3%D0%BE%D0%B2%D0%BE%D0%B5-%D0%BF%D1%80%D0%B5%D0%B4%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5-%D1%83%D1%82%D0%BF">Уникальное торговое предложение (УТП)</a></li>
-<li><a href="#9-%D1%82%D0%B5%D1%85%D0%BD%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B0%D1%8F-%D0%B0%D1%80%D1%85%D0%B8%D1%82%D0%B5%D0%BA%D1%82%D1%83%D1%80%D0%B0-tenderinsight">Техническая архитектура</a></li>
-<li><a href="#10-%D0%BE%D1%86%D0%B5%D0%BD%D0%BA%D0%B0-%D0%BD%D0%B5%D0%BE%D0%B1%D1%85%D0%BE%D0%B4%D0%B8%D0%BC%D1%8B%D1%85-%D0%B2%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B9-%D1%84%D0%B8%D0%BD%D0%B0%D0%BD%D1%81%D0%BE%D0%B2%D1%8B%D0%B9-%D0%BF%D0%BB%D0%B0%D0%BD">Оценка необходимых вложений</a></li>
-<li><a href="#11-%D0%BF%D0%BE%D1%87%D0%B5%D0%BC%D1%83-%D1%81%D1%82%D0%BE%D0%B8%D1%82-%D0%B2%D1%8B%D0%B1%D1%80%D0%B0%D1%82%D1%8C-%D1%8D%D1%82%D1%83-%D0%B8%D0%B4%D0%B5%D1%8E">Почему стоит выбрать эту идею?</a></li>
-</ol>
-<hr>
-<h2 id="1-%D0%BA%D1%80%D0%B0%D1%82%D0%BA%D0%BE%D0%B5-%D0%BE%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%D0%B8%D0%B5-%D0%B8%D0%B4%D0%B5%D0%B8">1. Краткое описание идеи</h2>
-<p><strong>TenderInsight</strong> — это ИИ-система для малых и средних компаний, участвующих в государственных и коммерческих тендерах.</p>
-<p>Система автоматически собирает данные о заказчиках и участниках, анализирует их репутацию, выявляет скрытые связи и прогнозирует вероятность выигрыша, чтобы помочь бизнесу принимать <strong>взвешенные решения</strong>: участвовать или не участвовать.</p>
-<hr>
-<h2 id="2-%D0%BF%D1%80%D0%BE%D0%B1%D0%BB%D0%B5%D0%BC%D0%B0-%D0%B8-%D1%86%D0%B5%D0%BB%D0%B5%D0%B2%D0%B0%D1%8F-%D0%B0%D1%83%D0%B4%D0%B8%D1%82%D0%BE%D1%80%D0%B8%D1%8F">2. Проблема и целевая аудитория</h2>
-<h3 id="%F0%9F%94%B4-%D0%BF%D1%80%D0%BE%D0%B1%D0%BB%D0%B5%D0%BC%D0%B0">🔴 Проблема</h3>
-<p>Участие в тендерах часто превращается в «лотерею» из-за:</p>
-<ul>
-<li>Отсутствия прозрачности истории заказчиков</li>
-<li>Сложности выявления аффилированных участников</li>
-<li>Высоких рисков финансовых и репутационных потерь</li>
-<li>Потери оплачиваемого времени на заведомо проигрышные закупки</li>
-</ul>
-<h3 id="%F0%9F%8E%AF-%D1%86%D0%B5%D0%BB%D0%B5%D0%B2%D0%B0%D1%8F-%D0%B0%D1%83%D0%B4%D0%B8%D1%82%D0%BE%D1%80%D0%B8%D1%8F">🎯 Целевая аудитория</h3>
-<ul>
-<li><strong>Малые и средние предприятия (МСП)</strong> — основные участники тендеров, но с ограниченными ресурсами на анализ</li>
-<li><strong>Частные компании</strong>, проводящие закупки и желающие минимизировать риски сотрудничества с недобросовестными поставщиками</li>
-</ul>
-<hr>
-<h2 id="3-%D1%82%D0%B5%D1%85%D0%BD%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%BE%D0%B5-%D0%BD%D0%B0%D0%BF%D1%80%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5">3. Технологическое направление</h2>
-<p>Стартап относится к следующим направлениям:</p>
-<ul>
-<li><strong>GovTech</strong> — основное (технологии для взаимодействия бизнеса с госсектором)</li>
-<li><strong>RegTech / ComplianceTech</strong> — оценка рисков и проверка контрагентов</li>
-<li><strong>AI-powered B2B SaaS</strong> — облачное решение с ИИ для бизнеса</li>
-<li><strong>Data Intelligence</strong> — агрегация и анализ больших данных из госреестров, СМИ, судебных баз</li>
-</ul>
-<hr>
-<h2 id="4-%D0%BA%D0%BE%D0%BD%D0%BA%D1%83%D1%80%D0%B5%D0%BD%D1%82%D1%8B">4. Конкуренты</h2>
-<h3 id="41-%D1%80%D0%BE%D1%81%D1%81%D0%B8%D0%B9%D1%81%D0%BA%D0%B8%D0%B5-%D0%BA%D0%BE%D0%BD%D0%BA%D1%83%D1%80%D0%B5%D0%BD%D1%82%D1%8B">4.1 Российские конкуренты</h3>
-<table>
-<thead>
-<tr>
-<th>Название</th>
-<th>Тип</th>
-<th>Сильные стороны</th>
-<th>Слабые стороны</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Контур.Закупки</strong></td>
-<td>B2B SaaS</td>
-<td>Интеграция с ЕИС, подача заявок, уведомления</td>
-<td>Нет ИИ, нет анализа рисков, нет прогнозов</td>
-</tr>
-<tr>
-<td><strong>СберБизнес (Закупки)</strong></td>
-<td>Банковский модуль</td>
-<td>Доступ через кабинет, связь с гарантиями</td>
-<td>Поверхностная аналитика, нет глубины</td>
-</tr>
-<tr>
-<td><strong>СПАРК / Контур.Фокус</strong></td>
-<td>Бизнес-справочник</td>
-<td>Богатые данные о компаниях и связях</td>
-<td>Не привязан к тендерам, сложен для МСП</td>
-</tr>
-<tr>
-<td><strong>zakupki.gov.ru</strong></td>
-<td>Госплатформа</td>
-<td>Полная и бесплатная база закупок</td>
-<td>Нет аналитики, плохой UX</td>
-</tr>
-</tbody>
-</table>
-<h3 id="42-%D0%BC%D0%B5%D0%B6%D0%B4%D1%83%D0%BD%D0%B0%D1%80%D0%BE%D0%B4%D0%BD%D1%8B%D0%B5-%D0%B0%D0%BD%D0%B0%D0%BB%D0%BE%D0%B3%D0%B8">4.2 Международные аналоги</h3>
-<table>
-<thead>
-<tr>
-<th>Название</th>
-<th>Регион</th>
-<th>Особенности</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>TenderAlpha</strong></td>
-<td>США / ЕС</td>
-<td>ИИ для прогноза победителей госзакупок</td>
-</tr>
-<tr>
-<td><strong>BidOps</strong></td>
-<td>США</td>
-<td>AI-оптимизация ставок в B2B-тендерах</td>
-</tr>
-<tr>
-<td><strong>Proactis / Jaggaer</strong></td>
-<td>Европа</td>
-<td>Enterprise-решения (слишком дороги для МСП)</td>
-</tr>
-</tbody>
-</table>
-<blockquote>
-<p>💡 <strong>Вывод</strong>: На российском рынке <strong>нет решения</strong>, сочетающего <strong>тендерные данные + ИИ-прогноз + простоту для МСП</strong>.</p>
-</blockquote>
-<hr>
-<h2 id="5-swot-%D0%B0%D0%BD%D0%B0%D0%BB%D0%B8%D0%B7-%D0%BA%D0%BE%D0%BD%D0%BA%D1%83%D1%80%D0%B5%D0%BD%D1%82%D0%BD%D0%BE%D0%B9-%D1%81%D1%80%D0%B5%D0%B4%D1%8B">5. SWOT-анализ конкурентной среды</h2>
-<h3 id="%E2%9C%85-strengths-%D1%81%D0%B8%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5-%D1%81%D1%82%D0%BE%D1%80%D0%BE%D0%BD%D1%8B-%D0%BA%D0%BE%D0%BD%D0%BA%D1%83%D1%80%D0%B5%D0%BD%D1%82%D0%BE%D0%B2">✅ Strengths (Сильные стороны конкурентов)</h3>
-<ul>
-<li>Высокая узнаваемость (Контур, Сбер)</li>
-<li>Интеграция с госреестрами и банковскими сервисами</li>
-<li>Богатые базы данных (СПАРК)</li>
-<li>Официальный статус госплатформ</li>
-</ul>
-<h3 id="%E2%9D%8C-weaknesses-%D1%81%D0%BB%D0%B0%D0%B1%D1%8B%D0%B5-%D1%81%D1%82%D0%BE%D1%80%D0%BE%D0%BD%D1%8B-%D0%BA%D0%BE%D0%BD%D0%BA%D1%83%D1%80%D0%B5%D0%BD%D1%82%D0%BE%D0%B2">❌ Weaknesses (Слабые стороны конкурентов)</h3>
-<ul>
-<li>Отсутствие ИИ и прогнозной аналитики</li>
-<li>Нет оценки рисков участия</li>
-<li>Сложность интерпретации для малого бизнеса</li>
-<li>Нет чётких рекомендаций</li>
-</ul>
-<h3 id="%F0%9F%8C%B1-opportunities-%D0%B2%D0%BE%D0%B7%D0%BC%D0%BE%D0%B6%D0%BD%D0%BE%D1%81%D1%82%D0%B8">🌱 Opportunities (Возможности)</h3>
-<ul>
-<li>Пробел на рынке: нет ИИ-решения для анализа тендерных рисков</li>
-<li>Господдержка участия МСП в закупках</li>
-<li>Потенциал интеграций (банки, ЦПМСП, CRM)</li>
-<li>Экспорт в СНГ и Восточную Европу</li>
-</ul>
-<h3 id="%E2%9A%A0%EF%B8%8F-threats-%D1%83%D0%B3%D1%80%D0%BE%D0%B7%D1%8B">⚠️ Threats (Угрозы)</h3>
-<ul>
-<li>Вход крупных игроков (Сбер, Контур)</li>
-<li>Зависимость от открытости госAPI</li>
-<li>Низкая готовность МСП платить за SaaS</li>
-<li>Регуляторные риски (ФЗ-152, GDPR)</li>
-</ul>
-<blockquote>
-<p><strong>Ключевой вывод</strong>: Конкуренты дают <strong>информацию</strong>. Мы даём <strong>решение</strong>.</p>
-</blockquote>
-<hr>
-<h2 id="6-%D1%81%D1%80%D0%B0%D0%B2%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5-%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D0%B9">6. Сравнение функций</h2>
-<table>
-<thead>
-<tr>
-<th>Функция</th>
-<th>TenderInsight</th>
-<th>Контур.Закупки</th>
-<th>СберБизнес</th>
-<th>СПАРК</th>
-<th>zakupki.gov.ru</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Поиск тендеров</td>
-<td>✅</td>
-<td>✅</td>
-<td>✅</td>
-<td>❌</td>
-<td>✅</td>
-</tr>
-<tr>
-<td>Анализ заказчика</td>
-<td>✅ (рейтинг)</td>
-<td>⚠️</td>
-<td>⚠️</td>
-<td>✅ (вручную)</td>
-<td>❌</td>
-</tr>
-<tr>
-<td>Выявление аффилированности</td>
-<td>✅ (ИИ + графы)</td>
-<td>❌</td>
-<td>❌</td>
-<td>⚠️</td>
-<td>❌</td>
-</tr>
-<tr>
-<td>Прогноз выигрыша</td>
-<td>✅</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-</tr>
-<tr>
-<td>Рекомендация: участвовать?</td>
-<td>✅</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-<td>❌</td>
-</tr>
-<tr>
-<td>Простота для МСП</td>
-<td>✅</td>
-<td>✅</td>
-<td>✅</td>
-<td>❌</td>
-<td>❌</td>
-</tr>
-<tr>
-<td>Цена (от)</td>
-<td><strong>990 ₽/мес</strong></td>
-<td>1 500 ₽/мес</td>
-<td>Бесплатно (базово)</td>
-<td>3 000 ₽/мес</td>
-<td>Бесплатно</td>
-</tr>
-</tbody>
-</table>
-<hr>
-<h2 id="7-%D0%BA%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D0%B0-%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D0%B0">7. Команда проекта</h2>
-<ul>
-<li><strong>Product-менеджер</strong> — фокус на ценность для МСП</li>
-<li><strong>Data Scientist / ML-инженер</strong> — ИИ-модели, NLP, графовые нейросети</li>
-<li><strong>Backend-разработчик</strong> — интеграция с госAPI, обработка Big Data</li>
-<li><strong>Frontend-разработчик + UX/UI-дизайнер</strong> — простой интерфейс</li>
-<li><strong>Эксперт по госзакупкам</strong> — предметная экспертиза, compliance</li>
-<li><strong>DevOps-инженер</strong> — масштабирование и надёжность</li>
-</ul>
-<hr>
-<h2 id="8-%D1%83%D0%BD%D0%B8%D0%BA%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B5-%D1%82%D0%BE%D1%80%D0%B3%D0%BE%D0%B2%D0%BE%D0%B5-%D0%BF%D1%80%D0%B5%D0%B4%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5-%D1%83%D1%82%D0%BF">8. Уникальное торговое предложение (УТП)</h2>
-<blockquote>
-<p><strong>TenderInsight — первая в РФ ИИ-система, которая не просто показывает тендер, а оценивает его риски и даёт чёткую рекомендацию для малого бизнеса.</strong></p>
-</blockquote>
-<p>Мы превращаем хаотичные открытые данные в <strong>понятный, actionable insight</strong>:</p>
-<blockquote>
-<p><em>«Этот тендер имеет 85% риска &quot;закрытости&quot;. Не участвуйте — сэкономите 40 часов и 150 000 ₽».</em></p>
-</blockquote>
-<hr>
-<h2 id="9-%D1%82%D0%B5%D1%85%D0%BD%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B0%D1%8F-%D0%B0%D1%80%D1%85%D0%B8%D1%82%D0%B5%D0%BA%D1%82%D1%83%D1%80%D0%B0-tenderinsight">9. Техническая архитектура TenderInsight</h2>
-<p>Архитектура строится по принципу микросервисов для обеспечения масштабируемости и отказоустойчивости.</p>
-<pre class="hljs"><code><div>┌─────────────────────────────────────────────────────────────────┐
-│                        Клиентское приложение                    │
-│              (Web, Мобильное App, Telegram Bot)                 │
-└─────────────────┬─────────────────────────────┬─────────────────┘
-                  │                             │
-                  │ HTTPS / REST API / WebSocket│
-                  │                             │
-┌─────────────────▼─────────────────────────────▼─────────────────┐
-│                    API Gateway (Nginx / Kong)                   │
-│        (Маршрутизация, аутентификация, ограничение запросов)    │
-└─────┬─────────────┬─────────────┬──────────────┬────────┬───────┘
-      │             │             │              │        │
-┌─────▼─────┐ ┌─────▼─────┐ ┌─────▼──────┐ ┌─────▼────┐ ┌─▼──────────┐
-│  Сервис   │ │  Сервис   │ │  Сервис    │ │ Сервис   │ │ Сервис     │
-│ Пользова- │ │ Поиска и  │ │  Аналитики │ │Платежей  │ │Уведомлений │
-│  телей &amp;  │ │ Монито-   │ │   &amp; AI     │ │ &amp; Билли- │ │ &amp; Рассылок │
-│   Auth    │ │  ринга    │ │            │ │  нга     │ │            │
-└───────────┘ └───────────┘ └────────────┘ └──────────┘ └────────────┘
-                                      │
-                              ┌───────▼───────┐
-                              │   Очереди     │
-                              │   (RabbitMQ)  │
-                              └───────┬───────┘
-                                      │
-      ┌─────────────────────────────────────────────────────────┐
-      │                     Data Layer                          │
-      └─────────────────────────────────────────────────────────┘
-┌─────────────┐ ┌─────────────┐ ┌─────────────┐ ┌─────────────┐
-│   База      │ │   Векторная │ │   Кэш       │ │  Хранилище  │
-│  Данных     │ │    База     │ │  (Redis)    │ │   Файлов    │
-│ (PostgreSQL)│ │ (pgvector / │ │             │ │   (S3)      │
-│             │ │   Chroma)   │ │             │ │             │
-└─────────────┘ └─────────────┘ └─────────────┘ └─────────────┘
-                                      │
-┌─────────────────────────────────────────────────────────┐
-│                    Внешние сервисы                       │
-└─────────────────────────────────────────────────────────┘
-      │              │                │              │
-┌─────▼─────┐  ┌─────▼─────┐  ┌───────▼──────┐  ┌────▼──────┐
-│   ЕИС     │  │   ФНС /   │  │   Судебные   │  │   СМИ &amp;   │
-│ (API 44-ФЗ│  │  СПАРК-   │  │   базы &amp;     │  │ Соцсети   │
-│  223-ФЗ)  │  │ Интерфакс │  │  ФССП/Федрес │  │ (API)     │
-└───────────┘  └───────────┘  └──────────────┘  └───────────┘
-</div></code></pre>
-<p><strong>Ключевые компоненты:</strong></p>
-<ol>
-<li><strong>Data Ingestion Layer (Сбор данных):</strong> Сервис мониторинга постоянно парсит открытые API (ЕИС, ФНС) и веб-источники, загружая данные в сыром виде.</li>
-<li><strong>ETL Pipeline (Обработка):</strong> Данные очищаются, нормализуются и обогащаются.</li>
-<li><strong>AI &amp; Analytics Core (Ядро анализа):</strong>
-<ul>
-<li><strong>NLP-движок:</strong> Обрабатывает тексты тендерной документации, выявляет субъективные критерии, анализирует тональность.</li>
-<li><strong>Графовая база данных:</strong> Строит и анализирует сети связей между заказчиками и поставщиками для выявления аффилированности.</li>
-<li><strong>ML-модели:</strong> На основе исторических данных (результаты прошлых тендеров, репутационные метки) обучаются модели для прогнозирования вероятности выигрыша.</li>
-</ul>
-</li>
-<li><strong>API Gateway:</strong> Единая точка входа для всех клиентов, управляет доступом.</li>
-<li><strong>Сервисная архитектура:</strong> Позволяет независимо масштабировать самые нагруженные части системы (например, сервис аналитики).</li>
-</ol>
-<hr>
-<h2 id="10-%D0%BE%D1%86%D0%B5%D0%BD%D0%BA%D0%B0-%D0%BD%D0%B5%D0%BE%D0%B1%D1%85%D0%BE%D0%B4%D0%B8%D0%BC%D1%8B%D1%85-%D0%B2%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B9-%D1%84%D0%B8%D0%BD%D0%B0%D0%BD%D1%81%D0%BE%D0%B2%D1%8B%D0%B9-%D0%BF%D0%BB%D0%B0%D0%BD">10. Оценка необходимых вложений (Финансовый план)</h2>
-<p>Вложения делятся на два основных этапа: <strong>Запуск MVP</strong> и <strong>Масштабирование</strong>.</p>
-<h3 id="%D1%8D%D1%82%D0%B0%D0%BF-1-%D0%B7%D0%B0%D0%BF%D1%83%D1%81%D0%BA-mvp-6-9-%D0%BC%D0%B5%D1%81%D1%8F%D1%86%D0%B5%D0%B2">Этап 1: Запуск MVP (6-9 месяцев)</h3>
-<p><em>Цель: Создание рабочего прототипа с базовым функционалом анализа и привлечение первых 100-200 платящих клиентов.</em></p>
-<table>
-<thead>
-<tr>
-<th>Статья расходов</th>
-<th>Сумма (руб.)</th>
-<th>Комментарий</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Команда (ФОТ)</strong></td>
-<td>2 500 000</td>
-<td>3-4 чел (TeamLead Fullstack, Data Scientist, UX/UI) на 6-9 мес. Частично возможна аутсорс-разработка.</td>
-</tr>
-<tr>
-<td><strong>Оборудование &amp; Хостинг</strong></td>
-<td>300 000</td>
-<td>Аренда серверов (Yandex Cloud/Selectel), домены, лицензии ПО.</td>
-</tr>
-<tr>
-<td><strong>Маркетинг &amp; Юридическое сопровождение</strong></td>
-<td>200 000</td>
-<td>Создание лендинга, контекстная реклама, регистрация юрлица.</td>
-</tr>
-<tr>
-<td><strong>Резервный фонд</strong></td>
-<td>200 000</td>
-<td>На непредвиденные расходы.</td>
-</tr>
-<tr>
-<td><strong>ИТОГО на MVP</strong></td>
-<td><strong>~3 200 000 руб.</strong></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<p><strong>Источники финансирования на этапе MVP:</strong></p>
-<ul>
-<li>Собственные средства основателей (бутстрэппинг)</li>
-<li>Гранты (Фонд Бортника, Фонд содействия инновациям, IT-кластеры)</li>
-<li>Ангельские инвестиции</li>
-</ul>
-<h3 id="%D1%8D%D1%82%D0%B0%D0%BF-2-%D0%BC%D0%B0%D1%81%D1%88%D1%82%D0%B0%D0%B1%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5-12-18-%D0%BC%D0%B5%D1%81%D1%8F%D1%86%D0%B5%D0%B2">Этап 2: Масштабирование (12-18 месяцев)</h3>
-<p><em>Цель: Увеличение функционала, активный рост клиентской базы (1000+ клиентов), выход на окупаемость.</em></p>
-<table>
-<thead>
-<tr>
-<th>Статья расходов</th>
-<th>Сумма (руб.)</th>
-<th>Комментарий</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Команда (ФОТ)</strong></td>
-<td>6 000 000 - 9 000 000</td>
-<td>Расширение команды до 6-8 чел: 2 бэкендера, 1 фронтенд, 1 дата-сайентист, 1 продакт/аналитик, 1 маркетолог, 1 саппорт.</td>
-</tr>
-<tr>
-<td><strong>Инфраструктура &amp; Данные</strong></td>
-<td>1 000 000 - 1 500 000</td>
-<td>Мощные сервера для AI, платные API для данных (СПАРК), CDN.</td>
-</tr>
-<tr>
-<td><strong>Маркетинг &amp; Sales</strong></td>
-<td>1 500 000 - 2 000 000</td>
-<td>Активные рекламные кампании, контент-маркетинг, участие в выставках, зарплата менеджера по продажам.</td>
-</tr>
-<tr>
-<td><strong>Операционные расходы</strong></td>
-<td>500 000</td>
-<td>Офис, связь, бухгалтерское обслуживание и пр.</td>
-</tr>
-<tr>
-<td><strong>ИТОГО на масштабирование</strong></td>
-<td><strong>~9 000 000 - 13 000 000 руб.</strong></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<p><strong>Источники финансирования на этапе масштабирования:</strong></p>
-<ul>
-<li>Венчурные инвестиции (после демонстрации успешного MVP)</li>
-<li>Краудфандинг (для B2B-проектов менее актуален)</li>
-<li>Реинвестирование прибыли (на поздних этапах)</li>
-</ul>
-<p><strong>Расчет окупаемости (упрощенный):</strong></p>
-<ul>
-<li>Целевая аудитория в РФ: ~500 000 активных МСП-участников закупок.</li>
-<li>План по захвату рынка: 1% (5 000 клиентов) за 3 года.</li>
-<li>Средний чек (ARPU): ~1 500 руб./мес.</li>
-<li><strong>Годовая выручка при достижении плана:</strong> 5 000 × 1 500 × 12 = <strong>90 000 000 руб./год.</strong></li>
-<li><strong>Окупаемость:</strong> При достижении плановых показателей окупаемость полных вложений (~15-20 млн руб.) наступит через 2-3 года после начала этапа масштабирования.</li>
-</ul>
-<hr>
-<h2 id="11-%D0%BF%D0%BE%D1%87%D0%B5%D0%BC%D1%83-%D1%81%D1%82%D0%BE%D0%B8%D1%82-%D0%B2%D1%8B%D0%B1%D1%80%D0%B0%D1%82%D1%8C-%D1%8D%D1%82%D1%83-%D0%B8%D0%B4%D0%B5%D1%8E">11. Почему стоит выбрать эту идею?</h2>
-<blockquote>
-<p><strong>Другие студенты должны выбрать эту идею, потому что она решает реальную, острую и массовую боль малого бизнеса — участие в тендерах без понимания рисков.</strong></p>
-<p>Наша система с помощью ИИ превращает «тендерную лотерею» в <strong>предсказуемый, управляемый процесс</strong>, помогая компаниям избегать убытков, тратить время с умом и повышать ROI от участия в закупках.</p>
-</blockquote>
-<hr>
-<h3 id="%E2%9C%85-%D0%B8%D1%82%D0%BE%D0%B3%D0%BE%D0%B2%D1%8B%D0%B9-%D0%B2%D0%B5%D1%80%D0%B4%D0%B8%D0%BA%D1%82">✅ Итоговый вердикт</h3>
-<p>Идея <strong>TenderInsight</strong> проходит проверку на жизнеспособность по всем ключевым параметрам:</p>
-<ol>
-<li><strong>Проблема</strong> — реальна и остра для целевой аудитории.</li>
-<li><strong>Рынок</strong> — существует устойчивый спрос и подтвержденная ниша.</li>
-<li><strong>Конкуренция</strong> — прямое отсутствие аналогов с тем же УТП.</li>
-<li><strong>Технологии</strong> — архитектура использует современный и масштабируемый стек.</li>
-<li><strong>Финансы</strong> — объем вложений сопоставим со стартапами в B2B SaaS, прогноз окупаемости реалистичен.</li>
-</ol>
+    <!-- Шапка -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-chart-line"></i>
+                    <h1>TenderInsight</h1>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="#about">О проекте</a></li>
+                        <li><a href="#problem">Проблема</a></li>
+                        <li><a href="#competitors">Конкуренты</a></li>
+                        <li><a href="#usp">УТП</a></li>
+                        <li><a href="#team">Команда</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
 
+    <!-- Герой секция -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h2>ИИ-платформа для взвешенного участия в тендерах</h2>
+                <p>Автоматический анализ заказчиков, прогноз выигрыша и рекомендации для малого и среднего бизнеса</p>
+                <a href="#about" class="cta-button">Узнать больше</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- О проекте -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>О проекте</h2>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>TenderInsight — это ИИ-система для анализа тендеров</h3>
+                    <p>Система автоматически собирает данные о заказчиках и участниках, анализирует их репутацию, выявляет скрытые связи и прогнозирует вероятность выигрыша.</p>
+                    <p>Мы помогаем бизнесу принимать <strong>взвешенные решения</strong>: участвовать или не участвовать в тендере, экономя время и ресурсы.</p>
+                </div>
+                <div class="about-features">
+                    <div class="feature">
+                        <i class="fas fa-brain"></i>
+                        <h4>ИИ-анализ</h4>
+                        <p>Искусственный интеллект анализирует историю заказчиков и участников</p>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-chart-bar"></i>
+                        <h4>Прогноз выигрыша</h4>
+                        <p>Точный прогноз вероятности победы в тендере</p>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-users"></i>
+                        <h4>Выявление связей</h4>
+                        <p>Обнаружение аффилированных участников и скрытых связей</p>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-bolt"></i>
+                        <h4>Экономия времени</h4>
+                        <p>Сокращение времени на анализ тендеров на 80%</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Проблема и решение -->
+    <section id="problem" class="problem-solution">
+        <div class="container">
+            <div class="section-title">
+                <h2>Проблема и решение</h2>
+            </div>
+            <div class="problem-solution-content">
+                <div class="problem">
+                    <h3><i class="fas fa-exclamation-triangle"></i> Проблема</h3>
+                    <p>Участие в тендерах часто превращается в «лотерею» из-за:</p>
+                    <ul>
+                        <li>Отсутствия прозрачности истории заказчиков</li>
+                        <li>Сложности выявления аффилированных участников</li>
+                        <li>Высоких рисков финансовых и репутационных потерь</li>
+                        <li>Потери оплачиваемого времени на заведомо проигрышные закупки</li>
+                    </ul>
+                </div>
+                <div class="solution">
+                    <h3><i class="fas fa-lightbulb"></i> Решение</h3>
+                    <p>TenderInsight предоставляет:</p>
+                    <ul>
+                        <li>Прозрачную аналитику по заказчикам и участникам</li>
+                        <li>Автоматическое выявление связей между компаниями</li>
+                        <li>Прогноз вероятности выигрыша с точностью до 85%</li>
+                        <li>Четкие рекомендации по участию в тендерах</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Конкуренты -->
+    <section id="competitors" class="competitors">
+        <div class="container">
+            <div class="section-title">
+                <h2>Сравнение с конкурентами</h2>
+            </div>
+            <div class="competitors-content">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Функция</th>
+                            <th>TenderInsight</th>
+                            <th>Контур.Закупки</th>
+                            <th>СберБизнес</th>
+                            <th>СПАРК</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Поиск тендеров</td>
+                            <td class="highlight">✅</td>
+                            <td>✅</td>
+                            <td>✅</td>
+                            <td>❌</td>
+                        </tr>
+                        <tr>
+                            <td>Анализ заказчика</td>
+                            <td class="highlight">✅ (рейтинг)</td>
+                            <td>⚠️</td>
+                            <td>⚠️</td>
+                            <td>✅ (вручную)</td>
+                        </tr>
+                        <tr>
+                            <td>Выявление аффилированности</td>
+                            <td class="highlight">✅ (ИИ + графы)</td>
+                            <td>❌</td>
+                            <td>❌</td>
+                            <td>⚠️</td>
+                        </tr>
+                        <tr>
+                            <td>Прогноз выигрыша</td>
+                            <td class="highlight">✅</td>
+                            <td>❌</td>
+                            <td>❌</td>
+                            <td>❌</td>
+                        </tr>
+                        <tr>
+                            <td>Рекомендация: участвовать?</td>
+                            <td class="highlight">✅</td>
+                            <td>❌</td>
+                            <td>❌</td>
+                            <td>❌</td>
+                        </tr>
+                        <tr>
+                            <td>Простота для МСП</td>
+                            <td class="highlight">✅</td>
+                            <td>✅</td>
+                            <td>✅</td>
+                            <td>❌</td>
+                        </tr>
+                        <tr>
+                            <td>Цена (от)</td>
+                            <td class="highlight"><strong>990 ₽/мес</strong></td>
+                            <td>1 500 ₽/мес</td>
+                            <td>Бесплатно (базово)</td>
+                            <td>3 000 ₽/мес</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- УТП -->
+    <section id="usp" class="usp">
+        <div class="container">
+            <div class="usp-content">
+                <div class="section-title">
+                    <h2 style="color: white;">Уникальное торговое предложение</h2>
+                </div>
+                <blockquote>
+                    TenderInsight — первая в РФ ИИ-система, которая не просто показывает тендер, а оценивает его риски и даёт чёткую рекомендацию для малого бизнеса.
+                </blockquote>
+                <p>Мы превращаем хаотичные открытые данные в <strong>понятный, actionable insight</strong>:</p>
+                <p><em>«Этот тендер имеет 85% риска "закрытости". Не участвуйте — сэкономите 40 часов и 150 000 ₽».</em></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Команда -->
+    <section id="team" class="team">
+        <div class="container">
+            <div class="section-title">
+                <h2>Наша команда</h2>
+            </div>
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="member-info">
+                        <h4>Product-менеджер</h4>
+                        <p>Фокус на ценность для МСП</p>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <div class="member-info">
+                        <h4>Data Scientist</h4>
+                        <p>ИИ-модели, NLP, графовые нейросети</p>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <div class="member-info">
+                        <h4>Backend-разработчик</h4>
+                        <p>Интеграция с госAPI, обработка Big Data</p>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <div class="member-info">
+                        <h4>Frontend-разработчик</h4>
+                        <p>Простой и интуитивный интерфейс</p>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <div class="member-info">
+                        <h4>Эксперт по госзакупкам</h4>
+                        <p>Предметная экспертиза, compliance</p>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <div class="member-info">
+                        <h4>DevOps-инженер</h4>
+                        <p>Масштабирование и надёжность</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Футер -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>О TenderInsight</h3>
+                    <p>ИИ-платформа для анализа тендеров, помогающая малому и среднему бизнесу принимать взвешенные решения об участии в закупках.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Контакты</h3>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> info@tenderinsight.ru</li>
+                        <li><i class="fas fa-phone"></i> +7 (495) 123-45-67</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Москва, Россия</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Быстрые ссылки</h3>
+                    <ul>
+                        <li><a href="#about">О проекте</a></li>
+                        <li><a href="#problem">Проблема и решение</a></li>
+                        <li><a href="#competitors">Конкуренты</a></li>
+                        <li><a href="#usp">УТП</a></li>
+                        <li><a href="#team">Команда</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2024 TenderInsight. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Плавная прокрутка для навигационных ссылок
+        document.querySelectorAll('nav a, .cta-button').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId.startsWith('#')) {
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            });
+        });
+        
+        // Анимация появления элементов при прокрутке
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+        
+        // Наблюдаем за секциями для анимации
+        document.querySelectorAll('section').forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(20px)';
+            section.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            observer.observe(section);
+        });
+    </script>
 </body>
 </html>
